@@ -6,6 +6,33 @@ document.addEventListener('mouseup', stopDrawing)
 
 let isDrawing = false;
 
+let drawnObjects = []
+
+let toolbar = document.querySelector('.toolbar');
+
+toolbar.addEventListener('click', colorPick);
+
+
+let color = "blue";
+function colorPick(e){
+    if (e.target.classList.contains('color-picker')) {
+        const styleOfElement = getComputedStyle(e.target);
+        color = styleOfElement.getPropertyValue('background-color');
+    }
+
+    /* let colorList = document.getElementsByClassName('color-picker');
+    for (let index = 0; index < colorList.length; index++) {
+        const element = colorList[index];
+        if (element == e.target) {
+
+            const styleOfElement = window.getComputedStyle(element);
+            color = styleOfElement.getPropertyValue('background-color');
+        }
+        
+    } */
+    
+}
+
 function startDrawing(e){
     isDrawing = true;
     draw(e);
@@ -25,6 +52,7 @@ function draw(e){
     }
     let star = document.createElement('div');
     star.classList.add('star');
+    star.style.backgroundColor = color;
     star.style.visibility = 'hidden';
     space.appendChild(star);
 
@@ -53,9 +81,29 @@ function draw(e){
         x <= spaceWidth+distanceFromLeft - starCenter &&
         x >= distanceFromLeft + starCenter
     ) {
-        //console.log(spaceHeight);
-        console.log("jó");
         star.style.visibility = 'visible';
+        drawnObjects.push(star);
         
     }
 }
+
+function deleteLastElement(){
+    if (drawnObjects.length > 0) {
+        let latestElement = drawnObjects.pop();
+        space.removeChild(latestElement);
+    }
+
+}
+
+function resetCanvas(){
+    space.innerHTML = '';
+}
+
+function startDelete() {
+    deleter = setInterval(function() {
+      deleteLastElement();
+    }, 30);
+  }
+  function endDelete() {
+    clearInterval(deleter);
+  }
