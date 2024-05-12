@@ -1,6 +1,8 @@
 let space = document.querySelector('#space')
 
-document.addEventListener('click', function(e){
+document.addEventListener('mousedown', draw)
+
+function draw(e){
     let star = document.createElement('div');
     star.classList.add('star');
     star.style.visibility = 'hidden';
@@ -36,5 +38,4 @@ document.addEventListener('click', function(e){
         star.style.visibility = 'visible';
         
     }
-    
-})
+}
