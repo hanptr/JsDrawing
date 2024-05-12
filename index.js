@@ -3,12 +3,18 @@ let space = document.querySelector('#space')
 document.addEventListener('click', function(e){
     let star = document.createElement('div');
     star.classList.add('star');
+    star.style.visibility = 'hidden';
+    space.appendChild(star);
+
+
+    let starCenter = star.offsetHeight/2;
+
     let x = e.clientX;
     let y = e.clientY;
 
     star.style.position = 'fixed';
-    star.style.top = y+'px';
-    star.style.left = x+'px';
+    star.style.top = y-starCenter+'px';
+    star.style.left = x-starCenter+'px';
 
     spaceHeight = space.offsetHeight;
     spaceWidth = space.offsetWidth;
@@ -19,10 +25,16 @@ document.addEventListener('click', function(e){
 
 
     console.log(distanceFromTop);
-    if (y <= spaceHeight+distanceFromTop-10 && y >= distanceFromTop && x <= spaceWidth+distanceFromLeft-10 && x >= distanceFromLeft) {
+    if (
+        y <= spaceHeight + distanceFromTop-starCenter &&
+        y >= distanceFromTop + starCenter &&
+        x <= spaceWidth+distanceFromLeft - starCenter &&
+        x >= distanceFromLeft + starCenter
+    ) {
         //console.log(spaceHeight);
-        //console.log(y);
-        space.appendChild(star);
+        console.log("jó");
+        star.style.visibility = 'visible';
+        
     }
     
 })
