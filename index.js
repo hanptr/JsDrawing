@@ -21,6 +21,7 @@ let drawnObjects = []
 let toolbar = document.querySelector('#toolbar');
 
 toolbar.addEventListener('click', colorPick);
+toolbar.addEventListener('click', colorPickSvg);
 
 
 let color = "blue";
@@ -41,6 +42,15 @@ function colorPick(e){
         
     } */
     
+}
+
+function colorPickSvg(e){
+    if (e.target.matches('path') && e.target.closest('svg').classList.contains('color-picker')) {
+        let selectedSvgStop = e.target.closest('svg').querySelector('stop');
+        let svgStopSytle = window.getComputedStyle(selectedSvgStop);
+        color = svgStopSytle.getPropertyValue('stop-color');
+    }
+    //self note: the 'path' node represents the svg objects actual hitbox
 }
 
 function startDrawing(e){
