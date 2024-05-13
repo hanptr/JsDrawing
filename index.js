@@ -8,7 +8,7 @@ let isDrawing = false;
 
 let drawnObjects = []
 
-let toolbar = document.querySelector('.toolbar');
+let toolbar = document.querySelector('#toolbar');
 
 toolbar.addEventListener('click', colorPick);
 

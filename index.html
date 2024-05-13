@@ -14,10 +14,13 @@
             <img src="https://korzh.com/assets/images/javascript.png" alt="JS" height="60px" srcset="">
         </div>
     </nav>
-    <div class="toolbar">
-        <button id="reverse" onclick="deleteLastElement()" onmousedown="startDelete()" onmouseup="endDelete()">Reverse</button>
-        <button id="reset" onclick="resetCanvas()" >Reset canvas</button>
-        <div class="parent">
+    <!--"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ToolBar """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" -->
+    <div id="toolbar">
+
+        <button class="toolBtn" id="reverse" onclick="deleteLastElement()" onmousedown="startDelete()" onmouseup="endDelete()">Reverse</button>
+        <button class="toolBtn" id="reset" onclick="resetCanvas()" >Reset canvas</button>
+
+        <div class="palette">
             <div class="div1 color-picker"></div>
             <div class="div2 color-picker"></div>
             <div class="div3 color-picker"></div>
@@ -31,6 +34,8 @@
     </div>
     
     <hr>
+
+    <!-- """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Canvas """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" -->
 
     <div id="canvas">
         <div id="space"></div>
