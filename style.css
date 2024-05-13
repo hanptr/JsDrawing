@@ -10,20 +10,28 @@ html, body {
   }
 
 body{
-    background-color: #B5C18E;
+    background-color: #153448;
     font-family: "Reddit Sans", sans-serif;
 }
 
 nav{
-    background-color: #EADBC8;
+    display: flex;
+    background-color: #3C5B6F;
     height: 10vh;
     border-radius: 0 0 10px 10px;
+    align-items: center;
 }
 
     .title{
         display: flex;
         align-items: center;
     }
+
+        .title p{
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+        }
 
 /*""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
 
@@ -38,9 +46,10 @@ nav{
         border-radius: 10px;
         border: 0;
         font-weight: bold;
-        background-color: #F1F1F1;
+        background-color: #948979;
         margin: 20px 20px 0px 20px;
         width: 200px;
+        color: white;
     }
     
     .toolBtn:active {
@@ -109,7 +118,7 @@ nav{
 hr{
     width: 60vw;
     height: 5px;
-    background-color: #EADBC8;
+    background-color: #DFD0B8;
     border: 0;
     border-radius: 30px;
 }
