@@ -4,6 +4,12 @@ document.addEventListener('mousedown', startDrawing)
 document.addEventListener('mousemove', draw)
 document.addEventListener('mouseup', stopDrawing)
 
+document.addEventListener('DOMContentLoaded', function() {
+    const nav = document.querySelector('nav');
+    nav.style.top = '0'; // Slide in the navbar from the top
+  });
+  
+
 let isDrawing = false;
 
 let drawnObjects = []

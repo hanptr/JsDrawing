@@ -15,11 +15,16 @@ body{
 }
 
 nav{
+    position: fixed;
+    top: -10vh;
+    width: 100%;
     display: flex;
     background-color: #3C5B6F;
     height: 10vh;
     border-radius: 0 0 10px 10px;
     align-items: center;
+    top: -10vh;
+    transition: top 0.9s;
 }
 
     .title{
@@ -34,6 +39,10 @@ nav{
         }
 
 /*""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+
+.content{
+    padding-top: 10vh;
+}
 
 #toolbar{
     display: block;
