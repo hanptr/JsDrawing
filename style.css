@@ -39,6 +39,9 @@ nav{
         border: 0;
         font-weight: bold;
         background-color: #F1F1F1;
+        margin: 20px auto 0px auto;
+        position: relative;
+        top: 2px;
     }
 
 
@@ -49,9 +52,10 @@ nav{
         column-gap: 10px;
         width: 30vw;
         height: 20vh;
-        border: 3px solid black;
         padding: 10px;
-        margin: 50px auto 50px auto;
+        margin: 20px auto 50px auto;
+        border-radius: 10px;
+        background-color: #EADBC8;
         }
 
 
