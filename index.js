@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
     nav.style.top = '0'; // Slide in the navbar from the top
   });
   
+document.addEventListener('DOMContentLoaded', function(){
+    const hr = document.querySelector('hr');
+    hr.style.width = '60vw';
+})
 
 let isDrawing = false;
 
