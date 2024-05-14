@@ -4,14 +4,24 @@ document.addEventListener('mousedown', startDrawing)
 document.addEventListener('mousemove', draw)
 document.addEventListener('mouseup', stopDrawing)
 
+//slide-in nav
 document.addEventListener('DOMContentLoaded', function() {
     const nav = document.querySelector('nav');
-    nav.style.top = '0'; // Slide in the navbar from the top
+    nav.style.top = '0';
   });
   
+//slide-in hr
 document.addEventListener('DOMContentLoaded', function(){
     const hr = document.querySelector('hr');
     hr.style.width = '60vw';
+})
+
+//palette's design hole color matching background
+document.addEventListener('DOMContentLoaded', function(){
+    const paletteDesignHole = document.querySelector('#hole circle');
+    const bodyStyle = window.getComputedStyle(this.body);
+    paletteDesignHole.style.fill = bodyStyle.backgroundColor;
+    console.log(bodyStyle.backgroundColor);
 })
 
 let isDrawing = false;
@@ -123,7 +133,8 @@ function startDelete() {
     deleter = setInterval(function() {
       deleteLastElement();
     }, 30);
-  }
+}
+
   function endDelete() {
     clearInterval(deleter);
-  }
+}

@@ -91,11 +91,23 @@ nav{
         .div7 { grid-area: 2 / 2 / 3 / 3; }
         .div8 { grid-area: 2 / 3 / 3 / 4; }
         .div9 { grid-area: 2 / 4 / 3 / 5; }
-        .div10 { grid-area: 2 / 5 / 3 / 6; }
+        .div10 { grid-area: 2 / 5 / 3 / 6; display: flex; justify-content: center; align-items: center;}
 
         svg:has(.color-picker){
             max-width: 90%;
         }
+
+        #palette-design-hole{
+            max-width: 70%;            
+        }
+
+            #palette-design-hole svg {
+                width: 100%; 
+                height: auto; 
+                display: block;
+            }
+
+            
 
         svg:has(.color-picker:hover){
             position: relative;
