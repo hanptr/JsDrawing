@@ -25,6 +25,7 @@ nav{
     align-items: center;
     top: -10vh;
     transition: top 0.9s;
+    padding-left: 20px;
 }
 
     .title{
