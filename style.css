@@ -69,7 +69,7 @@ nav{
 
     .palette{
         display: grid;
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(5, 1fr);
         column-gap: 10px;
         width: 30vw;
@@ -82,28 +82,34 @@ nav{
 
 
         
-        .div1 {grid-area: 1/1/2/2;}
-        .div2 {grid-area: 1/2/2/3;}
-        .div3 {grid-area: 1/3/2/4;}
-        .div4 {grid-area: 1/4/2/5;}
-        .div5 {grid-area: 3/1/4/2;}
-        .div6 {grid-area: 3/2/4/3;}
-        .div7 {grid-area: 3/3/4/4;}
-        .div8 {grid-area: 3/4/4/5;}
-        .div9 {
-            grid-area: 2/5/3/6;background: rgb(131,58,180);
-            background: linear-gradient(236deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-        }
+        .div1 { grid-area: 1 / 1 / 2 / 2; }
+        .div2 { grid-area: 1 / 2 / 2 / 3; }
+        .div3 { grid-area: 1 / 3 / 2 / 4; }
+        .div4 { grid-area: 1 / 4 / 2 / 5; }
+        .div5 { grid-area: 1 / 5 / 2 / 6; }
+        .div6 { grid-area: 2 / 1 / 3 / 2; }
+        .div7 { grid-area: 2 / 2 / 3 / 3; }
+        .div8 { grid-area: 2 / 3 / 3 / 4; }
+        .div9 { grid-area: 2 / 4 / 3 / 5; }
+        .div10 { grid-area: 2 / 5 / 3 / 6; }
 
         .color-picker{
             max-width: 90%;
         }
 
-        .color-picker:hover{
+        svg:has(.color-picker:hover){
             position: relative;
             top: -5px;
             filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+            /* #1 self note: needs to be done this way since svg has a bigger square-like hitbox
+                so if I want the hover effect to be displayed exatcly when mouse is over the shape then I need to set te hover effect on the
+                color-picker (path - whcih is the actual shape)
+                
+                # self note: because position and top have no effect on <path>, in order for the effect to be displayed I needed to apply it
+                    to the parent (svg) but only when the color-picker (<path>) is hovered*/
         }
+
+        
 
 
 #canvas{

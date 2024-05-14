@@ -45,7 +45,7 @@ function colorPick(e){
 }
 
 function colorPickSvg(e){
-    if (e.target.matches('path') && e.target.closest('svg').classList.contains('color-picker')) {
+    if (e.target.matches('path') && e.target.classList.contains('color-picker')) {
         let selectedSvgStop = e.target.closest('svg').querySelector('stop');
         let svgStopSytle = window.getComputedStyle(selectedSvgStop);
         color = svgStopSytle.getPropertyValue('stop-color');
